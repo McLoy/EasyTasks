@@ -4,13 +4,18 @@ import java.util.*;
 
 public class EasyTask3 {
     public static void main(String[] args) {
-//        Cat aCat = new Cat("Murchik");
-//        System.out.println(aCat.getName());
 
+        HashSet<Cat> cats = createCats(new Cat("Porter"), new Cat("Garfild"), new Cat("Zorro"));
+//        for (Cat f : cats)
+//            System.out.println(f.name);
+//        System.out.println("Deleting one of cats from Set");
 
-        EasyTask3 a = new EasyTask3();
-        TreeSet<Cat> allCats = a.createCats("Murchik","Garfield","Royald");
-        System.out.println(allCats.toString());
+        Iterator<Cat> iter = cats.iterator();
+        while(iter.hasNext()){
+            Cat s = iter.next();
+            if (s.name.equals("Zorro")) iter.remove();
+        }
+        printCats(cats);
     }
 
     public static class Cat{
@@ -19,24 +24,26 @@ public class EasyTask3 {
             this.name = name;
         }
 
-        public String getName() {
-            return name;
-        }
-
         private String name;
+
     }
 
-    public TreeSet<Cat> createCats(String catName1, String catName2, String catName3){
+    public static HashSet<Cat> createCats(Cat a, Cat b, Cat c){
 
-        TreeSet<Cat> catBox = new TreeSet<>();
+        HashSet<Cat> catBox = new HashSet<>();
 
-        catBox.add(new Cat(catName1));
-        catBox.add(new Cat(catName2));
-        catBox.add(new Cat(catName3));
+        catBox.add(a);
+        catBox.add(b);
+        catBox.add(c);
 
         return catBox;
-
     }
 
+    public static void printCats(HashSet<Cat> kiski){
+
+        for (Cat f : kiski)
+            System.out.println(f.name);
+
+    }
 
 }
