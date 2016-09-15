@@ -9,6 +9,7 @@ Create method printCats*/
 public class EasyTask3 {
     public static void main(String[] args) {
 
+
         HashSet<Cat> cats = createCats(new Cat("Porter"), new Cat("Garfild"), new Cat("Zorro"));
         for (Cat f : cats)
             System.out.println(f.name);
