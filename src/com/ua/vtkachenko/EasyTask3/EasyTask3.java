@@ -2,6 +2,10 @@ package com.ua.vtkachenko.EasyTask3;
 
 import java.util.*;
 
+/*Task: Wrote program using Set for class Cat.
+ Create method that creates 3 cats.
+ In the main method of program delete cat from Set
+Create method printCats*/
 public class EasyTask3 {
     public static void main(String[] args) {
 
