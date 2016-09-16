@@ -5,7 +5,7 @@ public class EasyTask7 {
     public static void main(String[] args) {
 
         countCode("aaacodebbb", "code");// → 1
-        countCode("aaacodwowowpolehchebratuhawowebbb", "wow");
+        countCode("aaacodwowowpolebratuhawowebbb", "wow");
 
     }
     public static void countCode(String in, String word){
@@ -13,7 +13,6 @@ public class EasyTask7 {
         int wl = word.length();
         StringBuilder sb = new StringBuilder();
         sb.append(in);
-
         int count = 0;
         for (int i = 0; i < sb.length() - wl; i++) {
             String wordOfString = sb.substring(i, i+wl);
