@@ -4,20 +4,22 @@ package com.ua.vtkachenko.EasyTask7;
 public class EasyTask7 {
     public static void main(String[] args) {
 
-        countCode("aaacodebbb");// → 1
+        countCode("aaacodebbb", "code");// → 1
+        countCode("aaacodwowowpolehchebratuhawowebbb", "wow");
 
     }
-    public static void countCode(String in){
-        int count = 0;
+    public static void countCode(String in, String word){
 
-        if (in.contains("code"))
-        {
-            do{
-            in.replaceFirst("code","");
-                count = 1;
-            }
-            while (in.contains("code"));
-        }        //System.out.println(c1.substring(1)+ c2.substring(1));
-        System.out.println(count);
+        int wl = word.length();
+        StringBuilder sb = new StringBuilder();
+        sb.append(in);
+
+        int count = 0;
+        for (int i = 0; i < sb.length() - wl; i++) {
+            String wordOfString = sb.substring(i, i+wl);
+            if (wordOfString.equals(word))
+                count = count + 1;
+        }
+        System.out.println("String '" + word + "' appears " + count + " times in string '" + in + "'");
     }
 }
