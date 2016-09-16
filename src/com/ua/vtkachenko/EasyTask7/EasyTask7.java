@@ -3,10 +3,8 @@ package com.ua.vtkachenko.EasyTask7;
 //Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
 public class EasyTask7 {
     public static void main(String[] args) {
-
         countCode("aaacodebbb", "code");// → 1
         countCode("odwowowpolebratuhawowebbb", "wow");
-
     }
     public static void countCode(String in, String word){
 
