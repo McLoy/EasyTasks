@@ -4,7 +4,7 @@ package com.ua.vtkachenko.EasyTask7;
 public class EasyTask7 {
     public static void main(String[] args) {
         countCode("aaacodebbb", "code");// → 1
-        countCode("ffdsahfsdfsdghwowowphjghdfgfghjolbrawowebbb", "wow");
+        countCode("ffdfdgssahfsdfsdghwowowphjghdfgfghjolbrawowebbb", "wow");
     }
     public static void countCode(String in, String word){
 
