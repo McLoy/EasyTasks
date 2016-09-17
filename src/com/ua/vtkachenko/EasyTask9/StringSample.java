@@ -1,4 +1,4 @@
-package com.ua.vtkachenko.EmptyTask9;
+package com.ua.vtkachenko.EasyTask9;
 
 public class StringSample {
     public static void main(String[] args) {
