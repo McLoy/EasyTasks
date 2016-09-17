@@ -15,16 +15,16 @@ public class EasyTask8 {
         String d = "Да мне похуй на все";
         String e = "Охуели совсем";
 
-        swearingFilter.filter(a);
-        swearingFilter.filter(b);
-        swearingFilter.filter(c);
-        swearingFilter.filter(d);
-        swearingFilter.filter(e);
+        SwearingFilter.filter(a);
+        SwearingFilter.filter(b);
+        SwearingFilter.filter(c);
+        SwearingFilter.filter(d);
+        SwearingFilter.filter(e);
 
     }
 }
 
-class swearingFilter {
+class SwearingFilter {
 
     static void filter(String str) {
 

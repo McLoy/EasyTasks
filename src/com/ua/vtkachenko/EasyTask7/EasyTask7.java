@@ -9,11 +9,9 @@ public class EasyTask7 {
     public static void countCode(String in, String word){
 
         int wl = word.length();
-        StringBuilder sb = new StringBuilder();
-        sb.append(in);
         int count = 0;
-        for (int i = 0; i < sb.length() - wl; i++) {
-            String wordOfString = sb.substring(i, i+wl);
+        for (int i = 0; i < in.length() - wl; i++) {
+            String wordOfString = in.substring(i, i+wl);
             if (wordOfString.equals(word))
                 count = count + 1;
         }
