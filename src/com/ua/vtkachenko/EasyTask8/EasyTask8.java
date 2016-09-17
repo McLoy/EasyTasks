@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
 
-//сделай класс фильтр матюков например swearingFilter.filter("Я ненавижу этот ебаный мир") -> "Я ненавижу этот @#%& мир" сделай так чтоб список матерных слов можно было пополнять
+//Создать класс фильтр матюков например swearingFilter.filter("Я ненавижу этот ебаный мир") -> "Я ненавижу этот @#%& мир" сделай так чтоб список матерных слов можно было пополнять
 public class EasyTask8 {
 
     public static void main(String[] args) throws  IOException{
