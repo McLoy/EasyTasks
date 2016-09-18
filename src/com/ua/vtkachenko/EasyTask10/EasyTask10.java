@@ -59,7 +59,7 @@ class SwearingFilter{
                         rs = tm.get(badW);
                     }
 
-                    if (sb.indexOf(badW) != -1){ //перенести в верх цикла
+                    if (sb.indexOf(badW) != -1){
                         sb.replace(sb.indexOf(badW), sb.indexOf(badW) + badW.length(), rs);
                     }
                 }
