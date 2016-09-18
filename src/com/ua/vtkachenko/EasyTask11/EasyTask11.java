@@ -1,21 +1,20 @@
-package com.ua.vtkachenko.EasyTask10;
+package com.ua.vtkachenko.EasyTask11;
 
 import java.util.*;
 import static com.ua.vtkachenko.EasyTask1.EasyTask1.putStringInArrayList;
 
 //Создать класс фильтр матюков например swearingFilter.filter("Я ненавижу этот ебаный мир") -> "Я ненавижу этот @#%& мир" сделай так чтоб список матерных слов можно было пополнять
-public class EasyTask10 {
+public class EasyTask11 {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
 
         System.out.println("Введите плохие слова разделяя их запятой или пробелом:");
         String ss = in.nextLine();
-        ArrayList<String> badWords;
-        badWords = putStringInArrayList(ss);
         System.out.println("Чудесно, у вас богатый багаж знаний!");
         SwearingFilter sf = new SwearingFilter();
-
+        sf.bw = putStringInArrayList(ss);
+        ArrayList<String> badWords = sf.bw;
         String ex = "";
         do {
 
@@ -32,7 +31,9 @@ public class EasyTask10 {
             System.out.println("Введите предложение в котором мы будем искать плохие слова:");
             String ss2 = in.nextLine();
 
-            sf.filter(ss2, badWords);
+            System.out.println("Фильтр выполнил замену:");
+            System.out.println(sf.filter(ss2));
+
             System.out.println("Вы хотите продолжить наш лингвистический тур? Y(Д)/N(Н)");
             ex = in.nextLine();
             ex = ex.toUpperCase();
@@ -43,47 +44,49 @@ public class EasyTask10 {
 
 class SwearingFilter{
 
-    public void filter(String str, ArrayList<String> bw){
+    public static String charsForMask = "@#$%^&*";
+
+    public String filter(String str){
 
         StringBuilder sb = new StringBuilder(str);
 
         for (String badW: bw){
 
-                do {
-                    String rs;
+            do {
+                if (sb.indexOf(badW) != -1){
 
-                    if (tm.get(badW) == null) {
-                        rs = randSymb(badW);
-                        tm.put(badW, rs);
-                    } else {
-                        rs = tm.get(badW);
-                    }
+                String rs;
 
-                    if (sb.indexOf(badW) != -1){ //перенести в верх цикла
-                        sb.replace(sb.indexOf(badW), sb.indexOf(badW) + badW.length(), rs);
-                    }
+                if (hm.get(badW) == null) {
+                    rs = getMask(badW);
+                    hm.put(badW, rs);
+                } else {
+                    rs = hm.get(badW);
                 }
-                while (sb.indexOf(badW) != -1);
+
+
+                    sb.replace(sb.indexOf(badW), sb.indexOf(badW) + badW.length(), rs);
+                }
+            }
+            while (sb.indexOf(badW) != -1);
 
         }
 
-            System.out.println("Фильтр выполнил замену:");
-            System.out.println(sb.toString());
-
+        return sb.toString();
     }
 
-    private String randSymb(String badWord){
+    private String getMask(String badWord){
 
         String rep = "";
         for (int j = 0; j < badWord.length(); j++) {
             Random r = new Random();
-            String dict = "@#$%^&*";
+            String dict = charsForMask;
             char c = dict.charAt(r.nextInt(dict.length()));
             rep = rep + c;
         }
         return rep;
     }
 
-    public TreeMap<String, String> tm = new TreeMap<>();
-
+    public Map<String, String> hm = new HashMap<>();
+    public ArrayList<String > bw = new ArrayList<>();
 }
