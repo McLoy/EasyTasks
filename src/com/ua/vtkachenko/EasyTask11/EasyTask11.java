@@ -1,7 +1,7 @@
 package com.ua.vtkachenko.EasyTask11;
 
 import java.util.*;
-import static com.ua.vtkachenko.EasyTask1.EasyTask1.putStringInArrayList;
+import static com.ua.vtkachenko.easyTask1.EasyTask1.putStringInArrayList;
 
 //Создать класс фильтр матюков например swearingFilter.filter("Я ненавижу этот ебаный мир") -> "Я ненавижу этот @#%& мир" сделай так чтоб список матерных слов можно было пополнять
 public class EasyTask11 {

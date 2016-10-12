@@ -1,4 +1,4 @@
-package com.ua.vtkachenko.EasyTask1;
+package com.ua.vtkachenko.easyTask1;
 
 import java.util.*;
 

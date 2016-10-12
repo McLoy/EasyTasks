@@ -3,7 +3,7 @@ package com.ua.vtkachenko.EasyTask2;
 import java.io.*;
 import java.util.*;
 
-import static com.ua.vtkachenko.EasyTask1.EasyTask1.putStringInArrayList;
+import static com.ua.vtkachenko.easyTask1.EasyTask1.putStringInArrayList;
 
 //Make a function that read some *.txt file and calculate how much doublicates of words are there, result sort by name
 public class EasyTask2 {
