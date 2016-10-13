@@ -6,14 +6,17 @@ public class Sort {
 
     public static void main(String[] args) {
 
-        int[] a = new int[10];
+        int[] a = new int[50000];
 
         Random r = new Random();
 
         for (int i = 0; i < a.length; i++) {
-            a[i] = r.nextInt(1000);
-            System.out.println(a[i]);
+            a[i] = r.nextInt(a.length*10);
+            //System.out.println(a[i]);
         }
+
+
+        long timeStart = System.currentTimeMillis();
 
         for (int i = a.length - 1; i >= 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -25,10 +28,16 @@ public class Sort {
 
             }
         }
-        System.out.println("++++++++");
-        for (int i = 0; i < a.length; i++) {
+
+        long timeFinish = System.currentTimeMillis();
+
+        //System.out.println("++++++++");
+        for (int i = 0; i < 20; i++) {
             System.out.println(a[i]);
         }
+
+        int mseconds = (int)(timeFinish - timeStart);
+        System.out.println("Time execution: " + mseconds + "ms or ~" + mseconds/1000 + "s" );
 
     }
 }
