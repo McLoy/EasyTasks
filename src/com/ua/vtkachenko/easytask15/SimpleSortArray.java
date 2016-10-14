@@ -30,7 +30,5 @@ public class SimpleSortArray {
         }
 
         System.out.println(Arrays.toString(a));
-
-
     }
 }
