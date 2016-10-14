@@ -1,7 +1,8 @@
 package com.ua.vtkachenko.easytask18;
 
 import java.util.Arrays;
-import java.util.Random;
+
+import static com.ua.vtkachenko.easytask16.BubbleSortOfArray.createRandNumsInArray;
 
 public class ShakerSortingArray {
 
@@ -9,18 +10,23 @@ public class ShakerSortingArray {
 
         int[] a = new int[50000];
 
-        Random r = new Random();
 
-        for (int i = 0; i < a.length; i++) {
-            a[i] = r.nextInt(a.length*10);
-        }
+        createRandNumsInArray(a);
 
         System.out.println(Arrays.toString(a));
 
         long start = System.currentTimeMillis();
 
+       shakerSortOfArray(a);
 
-        //Shaker Sorting
+        long finish = System.currentTimeMillis();
+        System.out.println(Arrays.toString(a));
+        int sec = (int)(finish-start);
+
+        System.out.println("Time of sorting: " + sec/1000 + " sec");
+    }
+
+    public static void shakerSortOfArray(int[] a){
         int z = 0;
         int t = 0;
         for (int j = a.length - 1; j > 0; j--) {
@@ -39,11 +45,5 @@ public class ShakerSortingArray {
                 }
             }
         }
-
-        long finish = System.currentTimeMillis();
-        System.out.println(Arrays.toString(a));
-        int sec = (int)(finish-start);
-
-        System.out.println("Time of sorting: " + sec/1000 + " sec");
     }
 }
