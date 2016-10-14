@@ -1,4 +1,4 @@
-package com.ua.vtkachenko.easytask15;
+package com.ua.vtkachenko.arraysorting.easytask15;
 
 import java.util.Arrays;
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.ua.vtkachenko.easytask13;
+package com.ua.vtkachenko.arraysorting.easytask13;
 
 import java.util.Random;
 

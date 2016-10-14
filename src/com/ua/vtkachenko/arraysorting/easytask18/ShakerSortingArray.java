@@ -1,20 +1,23 @@
-package com.ua.vtkachenko.easytask16;
+package com.ua.vtkachenko.arraysorting.easytask18;
 
 import java.util.Arrays;
-import java.util.Random;
 
-public class BubbleSortOfArray {
+import static com.ua.vtkachenko.arraysorting.easytask16.BubbleSortOfArray.createRandNumsInArray;
+
+public class ShakerSortingArray {
 
     public static void main(String[] args) {
 
-        int[] a = new int[40000];
+        int[] a = new int[50000];
+
+
         createRandNumsInArray(a);
 
         System.out.println(Arrays.toString(a));
 
         long start = System.currentTimeMillis();
 
-        bubbleSortOfArray(a);
+       shakerSortOfArray(a);
 
         long finish = System.currentTimeMillis();
         System.out.println(Arrays.toString(a));
@@ -23,16 +26,8 @@ public class BubbleSortOfArray {
         System.out.println("Time of sorting: " + sec/1000 + " sec");
     }
 
-    public static void createRandNumsInArray(int[] arr){
-
-        Random r = new Random();
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = r.nextInt(arr.length*100);
-        }
-
-    }
-
-    public static void bubbleSortOfArray(int[] a){
+    public static void shakerSortOfArray(int[] a){
+        int z = 0;
         int t = 0;
         for (int j = a.length - 1; j > 0; j--) {
             for (int i = 0; i < j; i++) {
@@ -40,6 +35,13 @@ public class BubbleSortOfArray {
                     t = a[i + 1];
                     a[i + 1] = a[i];
                     a[i] = t;
+                }
+            }
+            for (int k = j - 1; k >= a.length - j; k--) {
+                if (a[k] < a[k - 1]) {
+                    t = a[k - 1];
+                    a[k - 1] = a[k];
+                    a[k] = t;
                 }
             }
         }

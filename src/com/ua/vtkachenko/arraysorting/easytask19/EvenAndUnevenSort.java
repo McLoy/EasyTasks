@@ -1,15 +1,14 @@
-package com.ua.vtkachenko.easytask19;
+package com.ua.vtkachenko.arraysorting.easytask19;
 
 import java.util.Arrays;
-import java.util.Random;
 
-import static com.ua.vtkachenko.easytask16.BubbleSortOfArray.createRandNumsInArray;
+import static com.ua.vtkachenko.arraysorting.easytask16.BubbleSortOfArray.createRandNumsInArray;
 
 public class EvenAndUnevenSort {
 
     public static void main(String[] args) {
 
-        int[] a = new int[7];
+        int[] a = new int[10];
 
         createRandNumsInArray(a);
 
