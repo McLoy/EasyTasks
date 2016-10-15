@@ -7,6 +7,7 @@ import static com.ua.vtkachenko.arraysorting.easytask16.BubbleSortOfArray.bubble
 import static com.ua.vtkachenko.arraysorting.easytask16.BubbleSortOfArray.createRandNumsInArray;
 import static com.ua.vtkachenko.arraysorting.easytask18.ShakerSortingArray.shakerSortOfArray;
 import static com.ua.vtkachenko.arraysorting.easytask19.EvenAndUnevenSort.evenAndUnevenSortOfArray;
+import static com.ua.vtkachenko.arraysorting.quicksorting.QuickSortingOfArray.quickSortOfArray;
 
 public class CompareTimeOfSorting {
 
@@ -18,23 +19,26 @@ public class CompareTimeOfSorting {
         int averageTimeShaker = 0;
         int averageTimeEvenUneven = 0;
         int averageTimeComb = 0;
+        int averageTimeQuick = 0;
 
         int totalTimeBubble = 0;
         int totalTimeShaker = 0;
         int totalTimeEvenUneven = 0;
         int totalTimeComb = 0;
+        int totalTimeQuick = 0;
 
         int countOfIterations = 100;
 
         for (int i = 0; i < countOfIterations; i++) {
 
-            int[] aArr = new int[5000];
+            int[] aArr = new int[50000];
             createRandNumsInArray(aArr);
 
             int[] bArr = aArr.clone();
             int[] cArr = aArr.clone();
             int[] dArr = aArr.clone();
             int[] eArr = aArr.clone();
+            int[] fArr = aArr.clone();
 
 //            System.out.println("+++Bubble sorting+++");
 //            System.out.println(Arrays.toString(cArr));
@@ -79,17 +83,25 @@ public class CompareTimeOfSorting {
             totalTimeComb += msec;
             //System.out.println(i);
 
+            start = System.currentTimeMillis();
+            quickSortOfArray(dArr);
+            finish = System.currentTimeMillis();
+            msec = (int) (finish - start);
+            totalTimeQuick += msec;
+
         }
 
         averageTimeBubble = totalTimeBubble/countOfIterations;
         averageTimeShaker = totalTimeShaker/countOfIterations;
         averageTimeEvenUneven = totalTimeEvenUneven/countOfIterations;
         averageTimeComb = totalTimeComb/countOfIterations;
+        averageTimeQuick = totalTimeQuick/countOfIterations;
 
         System.out.println("Average time of Bubble sorting " + averageTimeBubble / 1000 + " sec" + " or " + averageTimeBubble + "msec");
         System.out.println("Average time of Shaker sorting " + averageTimeShaker / 1000 + " sec" + " or " + averageTimeShaker + "msec");
         System.out.println("Average time of EvenUneven sorting " + averageTimeEvenUneven / 1000 + " sec" + " or " + averageTimeEvenUneven + "msec");
         System.out.println("Average time of Comb sorting " + averageTimeComb / 1000 + " sec" + " or " + averageTimeComb + "msec");
+        System.out.println("Average time of Quick sorting " + averageTimeQuick / 1000 + " sec" + " or " + averageTimeQuick + "msec");
 
     }
 }
