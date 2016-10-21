@@ -48,7 +48,7 @@ public class Percolation {
 
         boolean percolates = false;
 
-
+            //
 
         return percolates;
     }
