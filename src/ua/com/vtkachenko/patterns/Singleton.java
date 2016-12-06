@@ -10,4 +10,5 @@ public final class Singleton {
             _instance = new Singleton();
         return _instance;
     }
+
 }
