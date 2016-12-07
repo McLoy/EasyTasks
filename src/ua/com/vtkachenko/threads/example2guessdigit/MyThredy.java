@@ -12,32 +12,47 @@ public class MyThredy extends Thread {
 
     @Override
     public void run() {
-        int findMeM = 7;
-        int findMeL = 7;
+//        gate.await();
+        int findMe = 7;
         int f;
+        int sleepTime = 500;
         Random r = new Random();
         if (name.equals("Рядовой")) {
             f = 0;
-            while ((f = r.nextInt(20)) != findMeM) {
+            while ((f = r.nextInt(20)) != findMe) {
                 System.out.println(name + " = может это " + f + " ?");
-//                try {
-//                    sleep(300);
-//                } catch (InterruptedException e) {
-//                    System.out.println("Exception of first thread");
-//                }
+                try {
+                    sleep(sleepTime);
+                } catch (InterruptedException e) {
+                    System.out.println("Exception of first thread");
+                }
             }
             System.out.println(name + " = Bingo!(" + f + ")");
         }
 
         if (name.equals("Лейтенант")) {
             f = 0;
-            while ((f = r.nextInt(20)) != findMeL) {
+            while ((f = r.nextInt(20)) != findMe) {
                 System.out.println(name + " = может это " + f + " ?");
-//                try {
-//                    sleep(300);
-//                } catch (InterruptedException e) {
-//                    System.out.println("Exception of second thread");
-//                }
+                try {
+                    sleep(sleepTime);
+                } catch (InterruptedException e) {
+                    System.out.println("Exception of second thread");
+                }
+            }
+            System.out.println(name + " = Bingo!(" + f + ")");
+        }
+
+
+        if (name.equals("Командир")) {
+            f = 0;
+            while ((f = r.nextInt(20)) != findMe) {
+                System.out.println(name + " = может это " + f + " ?");
+                try {
+                    sleep(sleepTime);
+                } catch (InterruptedException e) {
+                    System.out.println("Exception of third thread");
+                }
             }
             System.out.println(name + " = Bingo!(" + f + ")");
         }
