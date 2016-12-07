@@ -1,4 +1,4 @@
-package ua.com.vtkachenko.threads;
+package ua.com.vtkachenko.threads.simpleaxample;
 
 import static java.lang.Thread.sleep;
 
@@ -10,7 +10,7 @@ public class Program {
         Thread myThread = new Thread(someThing);
         myThread.start();
         for (int i = 0; i < 10; i++) {
-            if (! myThread.isAlive()){break;}
+//            if (! myThread.isAlive()){break;}
             System.out.println("Основной поток - " + i);
             try{
                 sleep(1000);

@@ -1,4 +1,4 @@
-package ua.com.vtkachenko.threads;
+package ua.com.vtkachenko.threads.simpleaxample;
 
 import static java.lang.Thread.sleep;
 
