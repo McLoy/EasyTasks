@@ -1,17 +1,19 @@
 package ua.com.vtkachenko.threads.example3;
 
-import java.util.Hashtable;
-
-
 public class SomeBuilderDemo {
 
     public static class SomeBuilder {
-        private Hashtable<String, Integer> counters = new Hashtable<String, Integer>();
+        private ThreadLocal<Integer> counter = new ThreadLocal<Integer>() {
+
+            @Override
+            protected Integer initialValue() {
+                return 0;
+            }
+        };
+
         public void build() {
             System.out.println("Thread " + Thread.currentThread().getName() + " Build some structure...");
-            if (!counters.containsKey(Thread.currentThread().getName()))
-                counters.put(Thread.currentThread().getName(), 0);
-            counters.put(Thread.currentThread().getName(), counters.get(Thread.currentThread().getName()) + 1);
+            counter.set(counter.get() + 1);
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
@@ -20,7 +22,7 @@ public class SomeBuilderDemo {
         }
 
         public int getCount() {
-            return counters.get(Thread.currentThread().getName());
+            return counter.get();
         }
     }
 
@@ -44,9 +46,10 @@ public class SomeBuilderDemo {
         SomeBuilder builder = new SomeBuilder();
         Thread thread1 = new SomeBuilderThread(builder);
         Thread thread2 = new SomeBuilderThread(builder);
-        try{
+        try {
             thread1.start();
             thread2.start();
+
             thread1.join();
             thread2.join();
         } catch (InterruptedException e) {
