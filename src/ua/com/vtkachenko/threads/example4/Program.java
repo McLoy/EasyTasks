@@ -34,6 +34,6 @@ public class Program {
         if (! mt1.isAlive() & ! mt2.isAlive()){
             System.out.println(count);
         }
-        System.out.println("End");
+        System.out.println("End program");
     }
 }
