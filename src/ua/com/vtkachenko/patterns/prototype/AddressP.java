@@ -1,6 +1,6 @@
 package ua.com.vtkachenko.patterns.prototype;
 
-public class Address implements Copyable {
+public class AddressP implements Copyable {
 
     private String type;
     private String street;
@@ -13,7 +13,7 @@ public class Address implements Copyable {
     public static final String HOME = "home";
     public static final String WORK = "work";
 
-    public Address(String initType, String initStreet, String initCity, String initState, String initZip){
+    public AddressP(String initType, String initStreet, String initCity, String initState, String initZip){
         type = initType;
         street = initStreet;
         city = initCity;
@@ -21,15 +21,15 @@ public class Address implements Copyable {
         zipCode = initZip;
     }
 
-    public Address(String initStreet, String initCity, String initState, String initZip){
+    public AddressP(String initStreet, String initCity, String initState, String initZip){
         this(WORK, initStreet, initCity, initState, initZip);
     }
 
-    public Address(String initType){
+    public AddressP(String initType){
         type = initType;
     }
 
-    public Address(){}
+    public AddressP(){}
 
     public String getType() {
         return type;
@@ -73,7 +73,7 @@ public class Address implements Copyable {
 
     @Override
     public Object copy() {
-        return new Address(street, city, state, zipCode);
+        return new AddressP(street, city, state, zipCode);
     }
 
     @Override
