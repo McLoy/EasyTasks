@@ -8,14 +8,14 @@ public class AddressImpl implements Address {
     private String city;
     private String state;
     private String zipCode;
-
     public static final String HOME = "home";
     public static final String WORK = "work";
 
     public AddressImpl() {
     }
 
-    public AddressImpl(String newDescription, String newStreet, String newCity, String newState, String newZipCode) {
+    public AddressImpl(String newDescription, String newStreet, String newCity,
+                       String newState, String newZipCode) {
         description = newDescription;
         street = newStreet;
         city = newCity;
@@ -29,18 +29,8 @@ public class AddressImpl implements Address {
     }
 
     @Override
-    public void setType(String newType) {
-        type = newType;
-    }
-
-    @Override
     public String getDescription() {
         return description;
-    }
-
-    @Override
-    public void setDescription(String newDescription) {
-        description = newDescription;
     }
 
     @Override
@@ -49,18 +39,8 @@ public class AddressImpl implements Address {
     }
 
     @Override
-    public void setStreet(String newStreet) {
-        street = newStreet;
-    }
-
-    @Override
     public String getCity() {
         return city;
-    }
-
-    @Override
-    public void setCity(String newCity) {
-        city = newCity;
     }
 
     @Override
@@ -69,13 +49,33 @@ public class AddressImpl implements Address {
     }
 
     @Override
-    public void setState(String newState) {
-        state = newState;
+    public String getZipCode() {
+        return zipCode;
     }
 
     @Override
-    public String getZipCode() {
-        return zipCode;
+    public void setType(String newType) {
+        type = newType;
+    }
+
+    @Override
+    public void setDescription(String newDescription) {
+        description = newDescription;
+    }
+
+    @Override
+    public void setStreet(String newStreet) {
+        street = newStreet;
+    }
+
+    @Override
+    public void setCity(String newCity) {
+        city = newCity;
+    }
+
+    @Override
+    public void setState(String newState) {
+        state = newState;
     }
 
     @Override

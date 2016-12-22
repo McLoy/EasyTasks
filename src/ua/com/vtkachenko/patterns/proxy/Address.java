@@ -15,11 +15,11 @@ public interface Address extends Serializable{
     public String getState();
     public String getZipCode();
 
-    public String setType(String newType);
-    public String setDescription(String newDescription);
-    public String setStreet(String newStreet);
-    public String setCity(String newCity);
-    public String setState(String newState);
-    public String setZipCode(String newZip);
+    public void setType(String newType);
+    public void setDescription(String newDescription);
+    public void setStreet(String newStreet);
+    public void setCity(String newCity);
+    public void setState(String newState);
+    public void setZipCode(String newZip);
 
 }
