@@ -4,14 +4,22 @@ import java.util.Arrays;
 
 public abstract class AbstractFilter {
     private AbstractFilter nextFilter;
-    public AbstractFilter() {}
-    public AbstractFilter(AbstractFilter nextFilter) { this.nextFilter = nextFilter;}
+
+    public AbstractFilter() {
+    }
+
+    public AbstractFilter(AbstractFilter nextFilter) {
+        this.nextFilter = nextFilter;
+    }
 
     private String getAsteriskString(int length) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < length; i++) { sb.append("*"); }
+        for (int i = 0; i < length; i++) {
+            sb.append("*");
+        }
         return sb.toString();
     }
+
     protected abstract String getWord();
 
     public String doFilter(String message) {
